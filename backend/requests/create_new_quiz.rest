@@ -1,0 +1,14 @@
+POST http://localhost:3001/api/quizzes
+Content-Type: application/json
+
+{
+  "quizname": "First Quiz",
+  "questions": [
+    {
+      "question": "How many legs dog has",
+      "correctAnswer": 4,
+      "falseAnswer1": 1,
+      "falseAnswer2": 6
+    }
+]
+}
