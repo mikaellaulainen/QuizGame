@@ -8,7 +8,8 @@ const Loginform = ({ handleUser }) => {
     <Form onSubmit={handleUser} className='border border-dark p-3 col-11 col-md-8 col-lg-4 col-xl-3 mx-auto'>
       <Form.Group>
         <Form.Label>Email address</Form.Label>
-        <Form.Control type='email' placeholder='example@example.com'/>
+        {/* FIX THIS TO EMAIL AFTER DEVELOPMENT */}
+        <Form.Control type='text' placeholder='example@example.com'/>
       </Form.Group>
       <Form.Group>
         <Form.Label>Password</Form.Label>
