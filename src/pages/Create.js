@@ -2,7 +2,10 @@ import { useState } from 'react'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import Question from '../components/Question'
+import { Navigate } from 'react-router-dom'
+
 const Create = () => {
+  const [done,setDone] = useState(false)
   const [quizname,setQuizname] = useState('')
   const [question,setQuestion] = useState('')
   const [questions,setQuestions] = useState([])
@@ -25,7 +28,6 @@ const Create = () => {
     setOption2('')
     setOption3('')
   }
-
   const postQuiz = (e) => {
     e.preventDefault()
     console.log('Posting your quiz to database')
@@ -34,6 +36,11 @@ const Create = () => {
       questions: questions
     }
     console.log(quizObject)
+    console.log('GOING TO  GAMEE')
+    setDone(!done)
+  }
+  if(done){
+    return <Navigate to='/game'/>
   }
   return (
     <div>
