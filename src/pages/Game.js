@@ -1,7 +1,7 @@
 import { Button } from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
 
-const Game = () => {
+const Game = ({ logout }) => {
 
   return (
     <div className="game">
@@ -9,6 +9,7 @@ const Game = () => {
       <LinkContainer to='/create'>
         <Button>Create your own quiz</Button>
       </LinkContainer>
+      <button onClick={logout}>Logout</button>
     </div>
   )
 }

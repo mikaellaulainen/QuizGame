@@ -2,18 +2,19 @@ import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import { Link } from 'react-router-dom'
 
+const Loginform = ({ handleLogin,handleUsername,handlePassword,password,username }) => {
 
-const Loginform = ({ handleUser }) => {
+
   return (
-    <Form onSubmit={handleUser} className='border border-dark p-3 col-11 col-md-8 col-lg-4 col-xl-3 mx-auto'>
+    <Form onSubmit={handleLogin} className='border border-dark p-3 col-11 col-md-8 col-lg-4 col-xl-3 mx-auto'>
       <Form.Group>
         <Form.Label>Email address</Form.Label>
         {/* FIX THIS TO EMAIL AFTER DEVELOPMENT */}
-        <Form.Control type='text' placeholder='example@example.com'/>
+        <Form.Control value={username} onChange={handleUsername} type='text' placeholder='username'/>
       </Form.Group>
       <Form.Group>
         <Form.Label>Password</Form.Label>
-        <Form.Control type='password' placeholder='Password'/>
+        <Form.Control value={password} onChange={handlePassword} type='password' placeholder='Password'/>
       </Form.Group>
       <div className='text-center'>
         <Button type='submit' className='login-btn my-3 btn-lg px-5 btn-dark'>Login</Button>

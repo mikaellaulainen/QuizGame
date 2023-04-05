@@ -1,19 +1,15 @@
-import { useState } from 'react'
-import Loginform from '../components/Loginform'
 import { Navigate } from 'react-router-dom'
+import Loginform from '../components/Loginform'
 
-const Home = () => {
-  const [user,setUser] = useState(false)
 
+const Home = ({ user,handleLogin,handleUsername,handlePassword,username,password }) => {
   if(user){
-    console.log('Logging in')
     return <Navigate to='/game'/>
   }
-
   return (
     <div className="Home">
       <p className='text-center h3 py-3'>Welcome to Quizgame</p>
-      <Loginform type="Login" handleUser={() => setUser(true)}/>
+      <Loginform handleLogin={handleLogin} handleUsername={handleUsername} handlePassword={handlePassword} password={password} username={username}/>
     </div>
   )
 }
