@@ -3,12 +3,12 @@ const usersRouter = require('express').Router()
 const User = require('../models/user')
 
 usersRouter.post('/',async (req,res) => {
-  const { username,fullname,password } = req.body
+  const { usermail,fullname,password } = req.body
 
   const passwordHash =await bcrypt.hash(password,10)
 
   const  user = new User({
-    username,
+    usermail,
     fullname,
     passwordHash
   })
