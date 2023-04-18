@@ -10,3 +10,12 @@ body{
 .login-btn:hover{
   background-color: var(--orange);
 }
+.login-error{
+  background-color: red;
+  color: #ffffff;
+}
+@media screen and (max-width:600px){
+  .login-form{
+    height: 100vh;
+  }
+}

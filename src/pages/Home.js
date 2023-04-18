@@ -2,14 +2,13 @@ import { Navigate } from 'react-router-dom'
 import Loginform from '../components/Loginform'
 
 
-const Home = ({ user,handleLogin,handleUsername,handlePassword,username,password }) => {
+const Home = ({ user,handleLogin,handleUsername,handlePassword,username,password,error }) => {
   if(user){
     return <Navigate to='/game'/>
   }
   return (
-    <div className="Home">
-      <p className='text-center h3 py-3'>Welcome to Quizgame</p>
-      <Loginform handleLogin={handleLogin} handleUsername={handleUsername} handlePassword={handlePassword} password={password} username={username}/>
+    <div className="Home vh-100 pt-lg-5">
+      <Loginform handleLogin={handleLogin} handleUsername={handleUsername} handlePassword={handlePassword} password={password} username={username} error={error}/>
     </div>
   )
 }

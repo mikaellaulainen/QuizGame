@@ -11,6 +11,7 @@ const App = () => {
   const [user,setUser] = useState(null)
   const [password,setPassword] = useState('')
   const [username,setUsername] = useState('')
+  const [error,setError] = useState(null)
 
   const handleLogin = async (e) => {
     e.preventDefault()
@@ -21,14 +22,14 @@ const App = () => {
       setUser(user)
       console.log('LOGIN SUCCESS')
     } catch (exception) {
-      alert('Login failed')
+      setError(exception.response.data.error)
     }
   }
   return (
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Layout/>}>
-          <Route index element={<Home user={user} handleLogin={handleLogin} handleUsername={({ target }) => setUsername(target.value)} handlePassword={({ target }) => setPassword(target.value)}/>} password={password} username={username}/>
+          <Route index element={<Home error={error} user={user} handleLogin={handleLogin} handleUsername={({ target }) => setUsername(target.value)} handlePassword={({ target }) => setPassword(target.value)}/>} password={password} username={username}/>
           <Route path='register' element={<Register/>}/>
           <Route path='game' element={<Game user={user} logout={() => setUser(null)}/>}/>
           <Route path='create' element={<Create/>}/>

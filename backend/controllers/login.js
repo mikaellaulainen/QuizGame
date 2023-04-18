@@ -11,7 +11,7 @@ loginRouter.post('/', async (req,res) => {
 
   if(!(user && passwordCorrect)){
     return res.status(401).json({
-      error:'INVALID USERNAME OR PASSWORD'
+      error:'Your login details were incorrect. Please try again'
     })
   }
 
