@@ -2,12 +2,12 @@ POST http://localhost:3001/api/quizzes
 Content-Type: application/json
 
 {
-  "quizname": "First Quiz",
+  "quizname": "All about ducks",
   "questions": [
     {
-      "question": "How many legs dog has",
-      "correctAnswer": 4,
-      "falseAnswer1": 1,
+      "question": "How many legs ducks have",
+      "correctAnswer": 2,
+      "falseAnswer1": 4,
       "falseAnswer2": 6
     }
 ]
